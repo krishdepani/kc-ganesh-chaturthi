@@ -149,6 +149,181 @@ console.log(`Meaning: ${shloka.purpose}`);
 
 ---
 
+### 3. Image Upload API
+
+**Endpoint:** `POST /api/upload`
+
+**Purpose:** Upload images to Cloudinary and receive secure URLs for storage and display.
+
+#### Request Format
+
+- **Method**: POST
+- **Content-Type**: multipart/form-data
+- **Body**: Form data with `file` field containing the image
+
+#### Response Format
+
+```typescript
+interface UploadResponse {
+  success: boolean;
+  url?: string;        // Cloudinary secure URL of uploaded image
+  publicId?: string;   // Cloudinary public ID for future operations
+  message?: string;    // Error message if success is false
+}
+```
+
+#### Example Usage
+
+```bash
+# Upload an image file
+curl -X POST http://localhost:3000/api/upload \
+  -F "file=@/path/to/your/image.jpg"
+
+# Upload with specific file
+curl -X POST http://localhost:3000/api/upload \
+  -F "file=@./photo.png" \
+  -H "Content-Type: multipart/form-data"
+```
+
+#### JavaScript/TypeScript Integration
+
+```typescript
+async function uploadImage(file: File) {
+  const formData = new FormData();
+  formData.append('file', file);
+  
+  const response = await fetch('/api/upload', {
+    method: 'POST',
+    body: formData
+  });
+  
+  if (!response.ok) {
+    throw new Error('Failed to upload image');
+  }
+  
+  return await response.json();
+}
+
+// Usage with file input
+const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
+  const file = event.target.files?.[0];
+  if (file) {
+    try {
+      const result = await uploadImage(file);
+      console.log('Image uploaded:', result.url);
+      console.log('Public ID:', result.publicId);
+    } catch (error) {
+      console.error('Upload failed:', error);
+    }
+  }
+};
+```
+
+---
+
+### 4. Images Gallery API
+
+**Endpoint:** `GET /api/images`
+
+**Purpose:** Retrieve all uploaded images from Cloudinary in randomized order for gallery display.
+
+#### Response Format
+
+```typescript
+interface ImagesResponse {
+  success: boolean;
+  urls: string[];      // Array of randomized Cloudinary image URLs
+  message?: string;    // Error message if success is false
+}
+```
+
+#### Example Usage
+
+```bash
+# Get all uploaded images (randomized)
+curl -X GET http://localhost:3000/api/images
+```
+
+#### JavaScript/TypeScript Integration
+
+```typescript
+async function getRandomizedImages() {
+  const response = await fetch('/api/images');
+  
+  if (!response.ok) {
+    throw new Error('Failed to fetch images');
+  }
+  
+  return await response.json();
+}
+
+// Usage
+const loadGallery = async () => {
+  try {
+    const result = await getRandomizedImages();
+    console.log(`Found ${result.urls.length} images`);
+    result.urls.forEach((url, index) => {
+      console.log(`Image ${index + 1}: ${url}`);
+    });
+  } catch (error) {
+    console.error('Failed to load gallery:', error);
+  }
+};
+```
+
+#### React Gallery Component Example
+
+```tsx
+import { useState, useEffect } from 'react';
+
+export function ImageGallery() {
+  const [images, setImages] = useState<string[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadImages = async () => {
+      try {
+        const response = await fetch('/api/images');
+        const data = await response.json();
+        if (data.success) {
+          setImages(data.urls);
+        }
+      } catch (error) {
+        console.error('Failed to load images:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadImages();
+  }, []);
+
+  if (loading) return <div>Loading gallery...</div>;
+
+  return (
+    <div className="grid grid-cols-3 gap-4">
+      {images.map((url, index) => (
+        <img 
+          key={index} 
+          src={url} 
+          alt={`Gallery image ${index + 1}`}
+          className="w-full h-48 object-cover rounded-lg"
+        />
+      ))}
+    </div>
+  );
+}
+```
+
+#### Key Features
+
+- **Automatic Randomization**: Images are shuffled on each request for varied gallery display
+- **Cloudinary Integration**: Leverages Cloudinary's CDN for fast, optimized image delivery
+- **Batch Retrieval**: Fetches up to 500 images in a single request
+- **Error Handling**: Graceful fallback with empty array on errors
+
+---
+
 ### Error Handling
 
 Both APIs implement comprehensive error handling:

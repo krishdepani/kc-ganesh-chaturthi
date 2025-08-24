@@ -28,3 +28,16 @@ export interface ApiError {
   status?: number;
   message?: string;
 }
+
+export interface UploadResponse {
+  success: boolean;
+  url?: string;
+  publicId?: string;
+  message?: string;
+}
+
+export interface ImagesResponse {
+  success: boolean;
+  urls: string[];
+  message?: string;
+}
