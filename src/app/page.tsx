@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import ShlokaSection from "./components/ShlokaSection";
 
 export default function Home() {
@@ -88,7 +89,10 @@ export default function Home() {
           {/* Three Main Cards Row */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16">
             {/* Schedule Card */}
-            <div className="group cursor-pointer transform hover:scale-105 transition-transform duration-200">
+            <Link
+              href="/schedule"
+              className="group cursor-pointer transform hover:scale-105 transition-transform duration-200"
+            >
               <div className="  h-full relative overflow-hidden ">
                 <div className="flex items-center justify-center h-full">
                   <Image
@@ -100,10 +104,13 @@ export default function Home() {
                   />
                 </div>
               </div>
-            </div>
+            </Link>
 
             {/* Aartis Card */}
-            <div className="group cursor-pointer transform hover:scale-105 transition-transform duration-200">
+            <Link
+              href="/aartis"
+              className="group cursor-pointer transform hover:scale-105 transition-transform duration-200"
+            >
               <div className="  h-full relative overflow-hidden ">
                 <div className="flex items-center justify-center h-full">
                   <Image
@@ -115,10 +122,13 @@ export default function Home() {
                   />
                 </div>
               </div>
-            </div>
+            </Link>
 
             {/* Seek Advice Card */}
-            <div className="group cursor-pointer transform hover:scale-105 transition-transform duration-200">
+            <Link
+              href="/advice"
+              className="group cursor-pointer transform hover:scale-105 transition-transform duration-200"
+            >
               <div className="h-full relative overflow-hidden ">
                 <div className="flex items-center justify-center h-full">
                   <Image
@@ -131,7 +141,7 @@ export default function Home() {
                   />
                 </div>
               </div>
-            </div>
+            </Link>
           </div>
 
           {/* Photo Album Section */}
