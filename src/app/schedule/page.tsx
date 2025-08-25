@@ -101,7 +101,7 @@ export default function SchedulePage() {
                 {/* Content */}
                 <div className="flex-1">
                   <h2 className="text-2xl sm:text-3xl font-semibold text-[#C76F59] mb-4 font-['Instrument_Serif']">
-                    27 August 2025
+                    27 August 2025 (Wednesday)
                   </h2>
 
                   {/* Event Cards */}
@@ -155,7 +155,7 @@ export default function SchedulePage() {
                 {/* Content */}
                 <div className="flex-1">
                   <h2 className="text-2xl sm:text-3xl font-semibold text-[#C76F59] mb-4 font-['Instrument_Serif']">
-                    28 August 2025
+                    28 August 2025 (Thursday)
                   </h2>
 
                   {/* Event Cards */}
@@ -209,7 +209,7 @@ export default function SchedulePage() {
                 {/* Content */}
                 <div className="flex-1">
                   <h2 className="text-2xl sm:text-3xl font-semibold text-[#C76F59] mb-4 font-['Instrument_Serif']">
-                    29 August 2025
+                    29 August 2025 (Friday)
                   </h2>
 
                   {/* Event Cards */}
@@ -263,7 +263,7 @@ export default function SchedulePage() {
                 {/* Content */}
                 <div className="flex-1">
                   <h2 className="text-2xl sm:text-3xl font-semibold text-[#C76F59] mb-4 font-['Instrument_Serif']">
-                    1 September 2025
+                    1 September 2025 (Monday)
                   </h2>
 
                   {/* Event Cards */}
@@ -317,7 +317,7 @@ export default function SchedulePage() {
                 {/* Content */}
                 <div className="flex-1">
                   <h2 className="text-2xl sm:text-3xl font-semibold text-[#C76F59] mb-4 font-['Instrument_Serif']">
-                    2 September 2025
+                    2 September 2025 (Tuesday)
                   </h2>
 
                   {/* Event Cards */}
