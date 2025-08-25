@@ -125,7 +125,7 @@ export default function SchedulePage() {
                         </span>
                         <span className="text-gray-800">•</span>
                         <span className="text-gray-800 font-medium">
-                          🎭 Talent Show
+                          🎵 Musical Sticks
                         </span>
                       </div>
                     </div>
@@ -179,7 +179,7 @@ export default function SchedulePage() {
                         </span>
                         <span className="text-gray-800">•</span>
                         <span className="text-gray-800 font-medium">
-                          🎵 Musical Sticks
+                          🎯 Dumb Charades
                         </span>
                       </div>
                     </div>
@@ -233,7 +233,7 @@ export default function SchedulePage() {
                         </span>
                         <span className="text-gray-800">•</span>
                         <span className="text-gray-800 font-medium">
-                          🎯 Dumb Charades
+                          🎭 Talent Show
                         </span>
                       </div>
                     </div>
@@ -287,7 +287,7 @@ export default function SchedulePage() {
                         </span>
                         <span className="text-gray-800">•</span>
                         <span className="text-gray-800 font-medium">
-                          🎨 Drawing/Similar Competition
+                          🎨 Drawing Competition
                         </span>
                       </div>
                     </div>
