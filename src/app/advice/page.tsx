@@ -174,8 +174,19 @@ export default function AdvicePage() {
           {/* Chat Messages */}
           <div className=" p-6 mb-6 min-h-[400px] max-h-[600px] overflow-y-auto">
             {messages.length === 0 ? (
-              <div className="text-center text-gray-500 py-8">
-                Start a conversation with Lord Ganesha...
+              <div className="text-center py-8">
+                <div className="mb-4">
+                  <Image
+                    src="/ganeshaloader.png"
+                    alt="Lord Ganesha"
+                    width={120}
+                    height={120}
+                    className="w-64 h-64 mx-auto rounded-full"
+                  />
+                </div>
+                <p className="text-gray-600 text-lg font-medium">
+                  Ask me anything child....
+                </p>
               </div>
             ) : (
               messages.map((message) => (
