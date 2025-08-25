@@ -124,7 +124,7 @@ export default function AartisPage() {
         {/* Footer Content Overlay */}
         <div className="absolute inset-0 flex items-end justify-center  sm:mb-0 lg:pb-8">
           <p className="text-white text-center font-medium text-sm">
-            Made with ❤️ & Crativos Mithai by Kirana Club
+            Made with ❤️ & Cravitos Mithai by Kirana Club
           </p>
         </div>
       </footer>
