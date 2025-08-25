@@ -45,10 +45,10 @@ export default function Home() {
                   {/* Kirana Club Logo - First Row */}
                   <div className="flex justify-center lg:justify-start mb-4">
                     <Image
-                      src="/kiranaclublogo.png"
+                      src="/kiranaclub.png"
                       alt="Kirana Club"
-                      width={40}
-                      height={20}
+                      width={100}
+                      height={100}
                       className="h-6 w-auto"
                     />
                   </div>
