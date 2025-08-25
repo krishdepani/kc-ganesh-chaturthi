@@ -9,7 +9,7 @@ export interface ChatResponse {
 }
 
 export interface ChatMessage {
-  role: 'user' | 'model';
+  role: "user" | "model";
   parts: { text: string }[];
 }
 
@@ -20,11 +20,24 @@ export interface ChatHistory {
 }
 
 export interface GeminiContent {
-  role: 'user' | 'model';
+  role: "user" | "model";
   parts: { text: string }[];
 }
 
 export interface ApiError {
   status?: number;
+  message?: string;
+}
+
+export interface UploadResponse {
+  success: boolean;
+  url?: string;
+  publicId?: string;
+  message?: string;
+}
+
+export interface ImagesResponse {
+  success: boolean;
+  urls: string[];
   message?: string;
 }

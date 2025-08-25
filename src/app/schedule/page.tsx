@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -40,7 +42,12 @@ export default function SchedulePage() {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button className="bg-[#C76F59] hover:bg-amber-800 text-white px-6 py-3 rounded-xl font-semibold transition-colors duration-200 flex items-center gap-2 text-base shadow-lg hover:shadow-xl">
+              <button
+                onClick={() =>
+                  window.open("https://calendar.google.com", "_blank")
+                }
+                className="bg-[#C76F59] hover:bg-amber-800 text-white px-6 py-3 rounded-xl font-semibold transition-colors duration-200 flex items-center gap-2 text-base shadow-lg hover:shadow-xl"
+              >
                 <svg
                   className="w-5 h-5"
                   fill="none"
@@ -226,7 +233,7 @@ export default function SchedulePage() {
                         </span>
                         <span className="text-gray-800">•</span>
                         <span className="text-gray-800 font-medium">
-                          🎯 Dumb Charades/Pictionary
+                          🎯 Dumb Charades
                         </span>
                       </div>
                     </div>
@@ -369,7 +376,7 @@ export default function SchedulePage() {
         />
 
         {/* Footer Content Overlay */}
-        <div className="absolute inset-0 flex items-end justify-center pb-2 sm:mb-0 lg:pb-8">
+        <div className="absolute inset-0 flex items-end justify-center  sm:mb-0 lg:pb-8">
           <p className="text-white text-center font-medium text-sm">
             Made with ❤️ & Crativos Mithai by Kirana Club
           </p>

@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import ShlokaSection from "./components/ShlokaSection";
@@ -61,7 +63,12 @@ export default function Home() {
                 <ShlokaSection />
 
                 {/* Subscribe Button */}
-                <button className="bg-[#D94F29] hover:bg-amber-800 text-white px-6 py-3 rounded-xl font-semibold transition-colors duration-200 flex items-center justify-center mx-auto lg:mx-0 gap-2 text-base shadow-lg hover:shadow-xl">
+                <button
+                  onClick={() =>
+                    window.open("https://calendar.google.com", "_blank")
+                  }
+                  className="bg-[#D94F29] hover:bg-amber-800 text-white px-6 py-3 rounded-xl font-semibold transition-colors duration-200 flex items-center justify-center mx-auto lg:mx-0 gap-2 text-base shadow-lg hover:shadow-xl mt-8"
+                >
                   <svg
                     className="w-5 h-5"
                     fill="none"
@@ -145,7 +152,10 @@ export default function Home() {
           </div>
 
           {/* Photo Album Section */}
-          <div className="group cursor-pointer transform hover:scale-105 transition-transform duration-200">
+          <Link
+            href="/photo-album"
+            className="group cursor-pointer transform hover:scale-105 transition-transform duration-200"
+          >
             <div className=" h-full relative overflow-hidden">
               <div className="flex items-center justify-center h-full">
                 <Image
@@ -158,7 +168,7 @@ export default function Home() {
                 />
               </div>
             </div>
-          </div>
+          </Link>
         </div>
       </main>
 
@@ -173,7 +183,7 @@ export default function Home() {
         />
 
         {/* Footer Content Overlay */}
-        <div className="absolute inset-0 flex items-end justify-center pb-2 sm:mb-0 lg:pb-8">
+        <div className="absolute inset-0 flex items-end justify-center  sm:mb-0 lg:pb-8">
           <p className="text-white text-center font-medium text-sm">
             Made with ❤️ & Crativos Mithai by Kirana Club
           </p>
