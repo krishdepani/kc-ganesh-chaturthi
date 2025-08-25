@@ -1,11 +1,7 @@
-import { NextResponse } from "next/server";
-import { v2 as cloudinary } from "cloudinary";
-import {
-  CLOUDINARY_CLOUD_NAME,
-  CLOUDINARY_API_KEY,
-  CLOUDINARY_API_SECRET,
-} from "@/app/lib/constants";
-import { ImagesResponse } from "@/app/lib/types";
+import { NextResponse } from 'next/server';
+import { v2 as cloudinary } from 'cloudinary';
+import { CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, CLOUDINARY_API_SECRET } from '@/app/lib/constants';
+import { ImagesResponse } from '@/app/lib/types';
 
 cloudinary.config({
   cloud_name: CLOUDINARY_CLOUD_NAME,
@@ -25,28 +21,24 @@ function shuffleArray<T>(array: T[]): T[] {
 export async function GET(): Promise<NextResponse<ImagesResponse>> {
   try {
     const result = await cloudinary.api.resources({
-      resource_type: "image",
+      resource_type: 'image',
       max_results: 500,
     });
 
-    const urls: string[] = result.resources.map(
-      (resource: { secure_url: string }) => resource.secure_url
-    );
+    const urls: string[] = result.resources.map((resource: { secure_url: string }) => resource.secure_url);
     const randomizedUrls = shuffleArray(urls);
 
     return NextResponse.json({
       success: true,
       urls: randomizedUrls,
     });
+
   } catch (error) {
-    console.error("Images fetch error:", error);
-    return NextResponse.json(
-      {
-        success: false,
-        urls: [],
-        message: "Failed to fetch images",
-      },
-      { status: 500 }
-    );
+    console.error('Images fetch error:', error);
+    return NextResponse.json({
+      success: false,
+      urls: [],
+      message: 'Failed to fetch images'
+    }, { status: 500 });
   }
 }

@@ -9,7 +9,7 @@ export interface ChatResponse {
 }
 
 export interface ChatMessage {
-  role: "user" | "model";
+  role: 'user' | 'model';
   parts: { text: string }[];
 }
 
@@ -20,7 +20,7 @@ export interface ChatHistory {
 }
 
 export interface GeminiContent {
-  role: "user" | "model";
+  role: 'user' | 'model';
   parts: { text: string }[];
 }
 
