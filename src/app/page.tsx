@@ -65,7 +65,7 @@ export default function Home() {
                 {/* Subscribe Button */}
                 <button
                   onClick={() =>
-                    window.open("https://calendar.google.com", "_blank")
+                    window.open("https://calendar.google.com/calendar/render?action=TEMPLATE&text=EVENT_TITLE&dates=START_DATE/END_DATE&details=DESCRIPTION&location=LOCATION", "_blank")
                   }
                   className="bg-[#D94F29] hover:bg-amber-800 text-white px-6 py-3 rounded-xl font-semibold transition-colors duration-200 flex items-center justify-center mx-auto lg:mx-0 gap-2 text-base shadow-lg hover:shadow-xl mt-8"
                 >
