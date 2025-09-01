@@ -325,7 +325,7 @@ export default function SchedulePage() {
                     <div className="bg-white rounded-lg p-4 shadow-sm">
                       <div className="flex items-center gap-2">
                         <span className="text-gray-800 font-medium">
-                          12:30 PM
+                          11:30 PM
                         </span>
                         <span className="text-gray-800">•</span>
                         <span className="text-gray-800 font-medium">
@@ -337,7 +337,7 @@ export default function SchedulePage() {
                     <div className="bg-white rounded-lg p-4 shadow-sm">
                       <div className="flex items-center gap-2">
                         <span className="text-gray-800 font-medium">
-                          1:00 PM
+                          12:00 PM
                         </span>
                         <span className="text-gray-800">•</span>
                         <span className="text-gray-800 font-medium">
